@@ -21,8 +21,9 @@ export async function parseConfiguration(configObject) {
     }
     // Other params
     const region = S3_REGION_NAME;
-    const project = process.env.KBC_PROJECTID + '-' + process.env.KBC_PROJECTNAME
-    const remotePath = DEFAULT_OUTPUT_DIR + project + '/' + process.env.KBC_CONFIGID;
+    const project_id = process.env.KBC_PROJECTID
+    const stack_id = process.env.KBC_STACKID
+    const remotePath = DEFAULT_OUTPUT_DIR + stack_id + '/' + project_id + '/' + process.env.KBC_CONFIGID;
     const compressOutput = true;
     const appendDatetime = false;
     const datetimePosition = POSTFIX_DATE_POSITION;
