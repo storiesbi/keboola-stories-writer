@@ -30,8 +30,7 @@ export async function parseConfiguration(configObject) {
     const datetimeFormat = DEFAULT_DATE_FORMAT;
     // We need to check whether the date based on the input params is a valid date.
     // If not, we can still return a default option.
-    const inputDate = moment(moment().format(datetimeFormat)).isValid() ?
-      moment().format(datetimeFormat) : moment().format(DEFAULT_DATE_FORMAT);
+    const inputDate = moment().format(datetimeFormat);
     // We need to make sure either prefix or suffix is specified for parameters:datetime_position.
     const datePositionCheckExpression = /prefix|postfix/;
     if (!datePositionCheckExpression.test(datetimePosition)) {
