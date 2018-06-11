@@ -24,7 +24,7 @@ export async function parseConfiguration(configObject) {
     const project_id = process.env.KBC_PROJECTID
     const stack_id = process.env.KBC_STACKID
     const remotePath = DEFAULT_OUTPUT_DIR + stack_id + '/' + project_id + '/' + process.env.KBC_CONFIGID;
-    const compressOutput = true;
+    const compressOutput = configObject.get('parameters:compress_output') || false;
     const appendDatetime = false;
     const datetimePosition = POSTFIX_DATE_POSITION;
     const datetimeFormat = DEFAULT_DATE_FORMAT;

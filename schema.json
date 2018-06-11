@@ -1,4 +1,18 @@
 {
   "title": "Parameters",
-  "type": "object"
+  "type": "object",
+  "required": [
+    "compress_output"
+  ],
+  "properties": {
+    "compress_output": {
+      "title": "Compress output (gzip)",
+      "type": "boolean",
+      "enum": [
+        false,
+        true
+      ],
+      "default": false
+    }
+  }
 }
